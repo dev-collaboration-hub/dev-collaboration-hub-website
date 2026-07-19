@@ -1,127 +1,200 @@
 # Dev Collaboration Hub Website
 
-Official website for the Dev Collaboration Hub community.
+Official website for **Dev Collaboration Hub** — an open-source developer community where developers collaborate on real-world software projects, learn together, and contribute to Python, AI, Backend, Systems, and Developer Tools.
+
+---
 
 ## Overview
 
-Dev Collaboration Hub is an open-source developer community focused on:
-
-- Open Source Development
-- Python Projects
-- Backend Development
-- AI & Machine Learning
-- System Programming
-- Contributor Mentorship
-
-This repository contains the source code for the community website.
+The Dev Collaboration Hub Website serves as the central platform for our community. It helps developers discover projects, connect with contributors, and find opportunities to contribute to open-source software.
 
 ---
 
-## Goals
+## Features
 
-- Showcase community projects
-- Display active contributors
-- Provide contribution guides
-- Highlight open issues and opportunities
-- Help developers collaborate effectively
+* Modern and responsive website
+* Community introduction and mission
+* Project showcase
+* Contributor profiles
+* Open-source contribution guides
+* GitHub organization integration
+* Beginner-friendly contribution opportunities
+* Community announcements and updates
 
 ---
 
-## Planned Features
+## Planned Pages
 
-### Home Page
-- Community introduction
-- Mission and vision
-- Join community section
+### Home
 
-### Projects Page
-- Active repositories
-- Project status
-- Contribution opportunities
+* Community overview
+* Mission & vision
+* Join the community
 
-### Contributors Page
-- Contributor showcase
-- Community members
+### Projects
+
+* Active repositories
+* Project descriptions
+* Contribution opportunities
+
+### Contributors
+
+* Community members
+* Contributor profiles
+* Recognition
 
 ### Contribution Guide
-- How to contribute
-- GitHub workflow
-- Beginner-friendly tasks
 
-### Contact Page
-- GitHub Organization
-- LinkedIn Page
-- Community links
+* Getting started
+* GitHub workflow
+* Beginner-friendly issues
+
+### Contact
+
+* GitHub Organization
+* LinkedIn
+* Community links
 
 ---
 
 ## Tech Stack
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Vercel Deployment
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Vercel
+
+---
+
+## Project Structure
+
+```text
+app/
+components/
+public/
+styles/
+lib/
+hooks/
+types/
+```
 
 ---
 
 ## Getting Started
 
-```bash
-git clone https://github.com/internship-projects-hub/dev-collaboration-hub-website.git
+### Clone the repository
 
+```bash
+git clone https://github.com/dev-collaboration-hub/dev-collaboration-hub-website.git
 cd dev-collaboration-hub-website
 ```
 
-Install dependencies:
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-Run development server:
+### Run the development server
 
 ```bash
 npm run dev
+```
+
+### Build for production
+
+```bash
+npm run build
 ```
 
 ---
 
 ## Roadmap
 
-### Phase 1
-- Website setup
-- UI design
-- Responsive layout
+### M1 — Website Foundation
 
-### Phase 2
-- Projects integration
-- Contributors section
-- GitHub integration
+* Project setup
+* Basic layout
+* Responsive design
 
-### Phase 3
-- Analytics
-- Community dashboard
-- Advanced features
+### M2 — UI Components
+
+* Navigation
+* Hero section
+* Footer
+* Reusable components
+
+### M3 — Project Explorer
+
+* Repository showcase
+* Project cards
+* Categories
+
+### M4 — Contributors
+
+* Contributor profiles
+* Community statistics
+
+### M5 — GitHub Integration
+
+* Repository data
+* Issues
+* Pull requests
+
+### M6 — Community Dashboard
+
+* Recent activity
+* Featured projects
+* Announcements
+
+### M7 — Advanced Features
+
+* Search
+* Filters
+* Dark mode
+* Performance improvements
+
+### M8 — Production Release
+
+* Final testing
+* Deployment
+* Documentation
 
 ---
 
 ## Contributing
 
-We welcome contributors of all skill levels.
+We welcome contributors of all experience levels.
 
-1. Fork repository
-2. Create branch
-3. Make changes
-4. Submit Pull Request
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Commit your work.
+5. Open a Pull Request.
 
-See CONTRIBUTING.md for details.
+Please read **CONTRIBUTING.md** before contributing.
+
+---
+
+## Code of Conduct
+
+Please follow our **CODE_OF_CONDUCT.md** to help maintain a welcoming and inclusive community.
 
 ---
 
 ## License
 
-MIT License
+This project is licensed under the MIT License.
 
 ---
 
-Built by the Dev Collaboration Hub Community.
+## Community
+
+* GitHub Organization
+* GitHub Discussions
+* Issues
+* Pull Requests
+
+---
+
+Built with ❤️ by the **Dev Collaboration Hub Community**.
