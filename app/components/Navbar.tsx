@@ -32,19 +32,36 @@ const Navbar = ({ navButtons, title }: PropsType) => {
           onClick={() => setIsOpen(!isOpen)}
           type="button"
           className="rounded p-2 text-gray-200 hover:bg-gray-600 sm:hidden focus:outline-none"
-          aria-label="Toggle Menu"
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             )}
           </svg>
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden sm:flex sm:items-center sm:gap-6">
+        <nav
+          id="mobile-navigation"
+          aria-label="Mobile"
+          hidden={!isOpen}
+          className="flex flex-col gap-2 border-t border-gray-600 px-4 pt-2 pb-4 sm:hidden"
+        >
           {navButtons.map((button) => (
             <Link
               key={button.text}
@@ -58,20 +75,23 @@ const Navbar = ({ navButtons, title }: PropsType) => {
       </div>
 
       {/* Mobile */}
-      {isOpen && (
-        <nav className="flex flex-col gap-2 px-4 pb-4 sm:hidden border-t border-gray-600 pt-2">
+      <nav
+        id="mobile-navigation"
+        aria-label="Mobile"
+        hidden={!isOpen}
+        className="flex flex-col gap-2 border-t border-gray-600 px-4 pt-2 pb-4 sm:hidden"
+      >
           {navButtons.map((button) => (
-            <Link
-              key={button.text}
-              href={button.url}
-              onClick={() => setIsOpen(false)}
-              className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-600"
-            >
-              {button.text}
-            </Link>
-          ))}
-        </nav>
-      )}
+          <Link
+            key={button.text}
+            href={button.url}
+            onClick={() => setIsOpen(false)}
+            className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-600"
+          >
+            {button.text}
+          </Link>
+        ))}
+      </nav>
     </header>
   );
 };
