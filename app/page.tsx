@@ -21,7 +21,7 @@ export default function Home() {
       },
       {
         text: "Contact",
-        url: "/contribution-guide"
+        url: "/contact"
       }
     ]
   }
