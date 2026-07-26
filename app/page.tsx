@@ -6,23 +6,23 @@ export default function Home() {
     navButtons: [
       {
         text: "Home",
-        url: "#"
+        url: "/"
       },
       {
         text: "Projects",
-        url: "#"
+        url: "/projects"
       },
       {
-        text: "Contributers",
-        url: "#"
+        text: "Contributors",
+        url: "/contributors"
       },
       {
-        text: "Contributers Guide",
-        url: "#"
+        text: "Contribution Guide",
+        url: "/contribution-guide"
       },
       {
         text: "Contact",
-        url: "#"
+        url: "/contribution-guide"
       }
     ]
   }
