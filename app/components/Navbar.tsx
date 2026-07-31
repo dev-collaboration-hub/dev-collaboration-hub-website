@@ -56,20 +56,20 @@ const Navbar = ({ navButtons, title }: PropsType) => {
         </button>
 
         {/* Desktop Navigation */}
-<nav
-  aria-label="Primary navigation"
-  className="hidden sm:flex sm:items-center sm:gap-6"
->
-  {navButtons.map((button) => (
-    <Link
-      key={button.text}
-      href={button.url}
-      className="border-b-2 border-transparent py-1 font-medium transition-colors hover:border-white"
-    >
-      {button.text}
-    </Link>
-  ))}
-</nav>
+        <nav
+          aria-label="Primary navigation"
+          className="hidden sm:flex sm:items-center sm:gap-6"
+        >
+          {navButtons.map((button) => (
+            <Link
+              key={button.text}
+              href={button.url}
+              className="border-b-2 border-transparent py-1 font-medium transition-colors hover:border-white"
+            >
+              {button.text}
+            </Link>
+          ))}
+        </nav>
       </div>
 
       {/* Mobile */}
