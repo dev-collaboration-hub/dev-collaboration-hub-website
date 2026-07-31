@@ -16,12 +16,9 @@ const Hero = () => {
             experience by building software that actually ships.
           </p>
 
-          <div className="mt-8 flex gap-4">
-            {/* REMEMBER TO REPLACE LINKS WITH THE BUTTON COMPONENT ONCE IT'S READY */}
-            <Link href="/projects">Explore Projects</Link>
-            <Link href="/contact">Join the Community</Link>
-          </div>
         </div>
+
+
       </div>
     </section>
   );
