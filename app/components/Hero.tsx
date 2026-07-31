@@ -16,8 +16,22 @@ const Hero = () => {
             experience by building software that actually ships.
           </p>
 
+          <div className="mt-8 flex gap-4">
+            {/* REMEMBER TO REPLACE LINKS WITH THE BUTTON COMPONENT ONCE IT'S READY */}
+            <Link href="/projects">Explore Projects</Link>
+            <Link href="/contact">Join the Community</Link>
+          </div>
         </div>
 
+        <div className="relative w-full flex-1">
+          <Image
+            src="/vercel.svg"
+            alt="Placeholder hero"
+            width={800}
+            height={800}
+            className="h-auto w-full object-contain"
+          />
+        </div>
 
       </div>
     </section>
