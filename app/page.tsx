@@ -28,8 +28,8 @@ export default function Home() {
   }
   return (
     <div className="dark:bg-black w-full">
-      <Hero/>
       <Navbar navButtons={data.navButtons} title></Navbar>
+      <Hero/>
     </div>
   );
 }
