@@ -1,43 +1,61 @@
 import React from "react";
 
-enum Spacing {
-  small = "sm",
-  medium = "md",
-  large = "lg"
+export enum Spacing {
+  small = "py-12",
+  medium = "py-24",
+  large = "py-36",
 }
 
-interface propsType {
+interface Props {
   title?: string;
   subtitle?: string;
   description?: string;
   spacing: Spacing;
-  dark: boolean;
-  content?: React.ReactNode;
+  dark?: boolean;
+  children?: React.ReactNode;
 }
 
-const Section = (props: propsType) => {
-  const { title, subtitle, description, spacing, dark, content } = props;
+const Section = ({
+  title,
+  subtitle,
+  description,
+  spacing,
+  dark = false,
+  children,
+}: Props) => {
   return (
-    <section className={`min-h-screen flex items-center ${dark? "dark" : ""}`}>
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 py-24 lg:flex-row lg:items-center lg:gap-16">
-        
+    <section
+      className={`min-h-screen ${
+        dark ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
+      <div
+        className={`mx-auto flex w-full max-w-7xl flex-col items-center gap-12 px-6 ${spacing} lg:flex-row lg:items-center lg:gap-16`}
+      >
         <div className="max-w-4xl flex-1">
-          <h1 className="font-geist-sans text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl">
-            {title}
-          </h1>
+          {subtitle && (
+            <p className="mb-3 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+              {subtitle}
+            </p>
+          )}
 
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            {description}
-          </p>
+          {title && (
+            <h1 className="font-geist-sans text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl">
+              {title}
+            </h1>
+          )}
 
-          <div className="mt-8 flex">
-            {description}
-          </div>
+          {description && (
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+              {description}
+            </p>
+          )}
         </div>
-        {props.content}
+
+        {children && <div className="w-full flex-1">{children}</div>}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Section
+export default Section;
