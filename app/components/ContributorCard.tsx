@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import type { ReactNode } from 'react';
 
 export interface ContributorProfile {
   id: string;
@@ -29,7 +30,7 @@ const getInitials = (name: string) =>
     .map((part) => part.charAt(0).toUpperCase())
     .join('');
 
-const Chip = ({ children }: { children: React.ReactNode }) => (
+const Chip = ({ children }: { children: ReactNode }) => (
   <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-700">
     {children}
   </span>
@@ -53,7 +54,6 @@ export default function ContributorCard({
   const isFeatured = variant === 'featured';
   const [avatarFailed, setAvatarFailed] = useState(false);
   const showImage = Boolean(avatarUrl) && !avatarFailed;
-  const showLink = Boolean(username);
 
   return (
     <article
@@ -69,9 +69,12 @@ export default function ContributorCard({
         </span>
       )}
 
-      <div className="flex items-center gap-4">
+      <div className={`flex items-center gap-4 ${isFeatured ? 'pr-16' : ''}`}>
         {showImage ? (
           <div className="h-16 w-16 shrink-0 overflow-hidden rounded-full">
+            {/* Plain <img> instead of next/image: avatar URLs come from an
+                external placeholder CDN and next/image would require
+                remotePatterns config in next.config.ts for them. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={avatarUrl}
@@ -159,37 +162,35 @@ export default function ContributorCard({
         </ul>
       )}
 
-      {showLink && (
-        <a
-          href={githubProfileUrl(username)}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`GitHub profile of ${name}`}
-          className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+      <a
+        href={githubProfileUrl(username)}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`GitHub profile of ${name}`}
+        className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+      >
+        GitHub profile
+        <svg
+          className="h-3.5 w-3.5"
+          aria-hidden="true"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
         >
-          GitHub profile
-          <svg
-            className="h-3.5 w-3.5"
-            aria-hidden="true"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path d="M6 3h7v7" strokeLinecap="round" strokeLinejoin="round" />
-            <path
-              d="M13 3 6.5 9.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M9.5 13H3.5a.5.5 0 0 1-.5-.5V6.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
-      )}
+          <path d="M6 3h7v7" strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d="M13 3 6.5 9.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M9.5 13H3.5a.5.5 0 0 1-.5-.5V6.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </a>
     </article>
   );
 }
