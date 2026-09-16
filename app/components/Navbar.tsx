@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 type ButtonType = {
   text: string;
@@ -19,24 +19,31 @@ const Navbar = ({ navButtons, title }: PropsType) => {
   return (
     <header className="w-full bg-gray-500 dark:bg-gray-900 text-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between p-4">
-        
         {/* Title */}
         {title ? (
           <Link href="/" className="whitespace-nowrap text-lg font-bold">
             Dev Collaboration Hub
           </Link>
-        ) : <div />}
+        ) : (
+          <div />
+        )}
 
         {/* Hamburger Button (for phOne) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
-          className="rounded p-2 text-gray-200 hover:bg-gray-600 sm:hidden focus:outline-none"
+          className="rounded p-2 text-gray-200 hover:bg-gray-600 sm:hidden focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           aria-label="Toggle menu"
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
         >
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg
+            aria-hidden="true"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
             {isOpen ? (
               <path
                 strokeLinecap="round"
@@ -79,7 +86,7 @@ const Navbar = ({ navButtons, title }: PropsType) => {
         hidden={!isOpen}
         className="flex flex-col gap-2 border-t border-gray-600 px-4 pt-2 pb-4 sm:hidden"
       >
-          {navButtons.map((button) => (
+        {navButtons.map((button) => (
           <Link
             key={button.text}
             href={button.url}
