@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -18,17 +18,37 @@ const Footer = () => {
           <div>
             <h3 className="mb-3 text-lg font-semibold">Quick Links</h3>
 
-            <nav
-              aria-label="Footer Navigation"
-              className="flex flex-col gap-2"
-            >
-              <Link href="/home" className="hover:text-gray-300 transition-colors">Home</Link>
-              <Link href="/projects" className="hover:text-gray-300 transition-colors">Projects</Link>
-              <Link href="/contribution" className="hover:text-gray-300 transition-colors" >Contributors</Link>
-              <Link href="/contribution-guide" className="hover:text-gray-300 transition-colors">
+            <nav aria-label="Footer Navigation" className="flex flex-col gap-2">
+              <Link
+                href="/"
+                className="rounded transition-colors hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                Home
+              </Link>
+              <Link
+                href="/projects"
+                className="rounded transition-colors hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                Projects
+              </Link>
+              <Link
+                href="/contributors"
+                className="rounded transition-colors hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                Contributors
+              </Link>
+              <Link
+                href="/contribution-guide"
+                className="rounded transition-colors hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
                 Contribution Guide
               </Link>
-              <Link href="/contact" className="hover:text-gray-300 transition-colors">Contact</Link>
+              <Link
+                href="/contact"
+                className="rounded transition-colors hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                Contact
+              </Link>
             </nav>
           </div>
 
@@ -40,7 +60,7 @@ const Footer = () => {
               href="https://github.com/dev-collaboration-hub"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="rounded transition-colors hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               GitHub Organization
             </a>
